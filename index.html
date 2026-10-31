@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>वागड़ी शब्दकोश एवं व्याकरण (Wagdi Kosh)</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600&family=Rozha+One&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom Rustic Theme Colors */
+        :root {
+            --parchment: #FDFBF7;
+            --gerua: #9C3D24;
+            --haldi: #D97706;
+            --earth: #5A3825;
+            --border-rustic: #E2D5C4;
+        }
+
+        body {
+            background-color: var(--parchment);
+            font-family: 'Mukta', sans-serif;
+            color: var(--earth);
+            background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+        }
+
+        .font-heading {
+            font-family: 'Rozha One', serif;
+        }
+
+        /* Header & Toran Styling */
+        .header-toran {
+            background: linear-gradient(90deg, var(--gerua) 0%, #A84424 50%, var(--gerua) 100%);
+            border-bottom: 4px dashed var(--border-rustic);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-toran::after {
+            content: "✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧";
+            color: var(--haldi);
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            opacity: 0.8;
+        }
+
+        /* Pothi Card Styling */
+        .pothi-card {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--border-rustic);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(90, 56, 37, 0.1), 0 2px 4px -1px rgba(90, 56, 37, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pothi-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 1px solid var(--haldi);
+            border-radius: 6px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .pothi-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(90, 56, 37, 0.15);
+            border-color: var(--gerua);
+        }
+
+        /* Alphabet Bar */
+        .akshar-tablet {
+            background: #E8D5C4;
+            border: 2px solid var(--border-rustic);
+            border-radius: 4px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .akshar-tablet:hover, .akshar-tablet.active {
+            background: var(--haldi);
+            color: white;
+            border-color: var(--gerua);
+            transform: scale(1.05);
+        }
+
+        /* Scroll Note Styling */
+        .scroll-note {
+            background: #FFF9E6;
+            border-left: 4px solid var(--haldi);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            box-shadow: inset -2px 0 5px rgba(0,0,0,0.05);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Search Bar */
+        .search-input {
+            border: 2px solid var(--border-rustic);
+            background: rgba(255, 255, 255, 0.8);
+            transition: border-color 0.3s;
+        }
+        .search-input:focus {
+            border-color: var(--gerua);
+            outline: none;
+        }
+
+        /* Copy Button */
+        .copy-btn {
+            background: var(--haldi);
+            color: var(--earth);
+            border: 1px solid var(--gerua);
+            transition: all 0.2s;
+        }
+        .copy-btn:hover {
+            background: var(--gerua);
+            color: white;
+        }
+
+        /* Table Styling */
+        .rustic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .rustic-table th {
+            background-color: var(--gerua);
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 2px solid var(--border-rustic);
+        }
+        .rustic-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border-rustic);
+            background-color: rgba(253, 251, 247, 0.8);
+        }
+        .rustic-table tr:nth-child(even) td {
+            background-color: rgba(250, 245, 235, 0.8);
+        }
+
+        /* Accordion */
+        .accordion-header {
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .accordion-header:hover {
+            background-color: var(--border-rustic);
+        }
+        .accordion-content {
+            display: none;
+            padding: 1rem;
+            border: 1px solid var(--border-rustic);
+            border-top: none;
+            background: var(--parchment);
+        }
+        .accordion-content.active {
+            display: block;
+        }
+
+        /* Badge Styling */
+        .badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-haldi { background: var(--haldi); color: white; }
+        .badge-gerua { background: var(--gerua); color: white; }
+        .badge-earth { background: var(--earth); color: white; }
+        .badge-mehendi { background: #166534; color: white; }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header (देसी चौपाल) -->
+    <header class="header-toran text-white py-6 px-4 shadow-lg">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="font-heading text-4xl md:text-5xl mb-2">वागड़ी शब्दकोश एवं व्याकरण</h1>
+            <p class="text-lg md:text-xl font-medium opacity-90">बांसवाड़ा - डूंगरपुर की विरासत | Vagad Heritage Dictionary & Grammar</p>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="bg-[#FAF5EB] border-b border-[#E2D5C4] py-3 px-4">
+        <div class="max-w-5xl mx-auto flex justify-center space-x-4">
+            <button id="tab-dict-btn" class="tab-btn font-heading text-xl px-6 py-2 border-b-4 border-[#9C3D24] text-[#9C3D24] bg-[#FAF5EB]">
+                शब्दकोश
+            </button>
+            <button id="tab-gram-btn" class="tab-btn font-heading text-xl px-6 py-2 text-[#5A3825] hover:text-[#9C3D24]">
+                व्याकरण
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-5xl w-full mx-auto p-4 md:p-8">
+        
+        <!-- Tab 1: शब्दकोश (Dictionary) -->
+        <section id="tab-dict" class="tab-content active">
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto mb-8">
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="वागड़ी शब्द, हिंदी अर्थ या लिप्यंतरण खोजें..." 
+                           class="search-input w-full px-6 py-4 rounded-full text-lg shadow-sm focus:ring-2 focus:ring-[#D97706]">
+                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[#5A3825]">🔍</span>
+                </div>
+            </div>
+
+            <!-- वर्णमाला पट्टी (Alphabet Bar) -->
+            <div class="mb-8 overflow-x-auto pb-4">
+                <div class="flex flex-wrap gap-2 justify-center" id="alphabet-bar">
+                    <!-- Akshars will be injected by JS -->
+                </div>
+            </div>
+
+            <!-- Word Cards (पोथी शैली) -->
+            <div id="word-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Cards will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Tab 2: व्याकरण (Grammar Guide) -->
+        <section id="tab-gram" class="tab-content">
+            <div id="grammar-container" class="space-y-6">
+                <!-- Accordions will be injected by JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#5A3825] text-[#FAF5EB] py-4 text-center text-sm">
+        <p>&copy; 2026 वागड़ी शब्दकोश एवं व्याकरण | राजस्थान की संस्कृति को समर्पित</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

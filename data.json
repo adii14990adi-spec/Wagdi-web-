@@ -1,0 +1,178 @@
+{
+  "words": [
+    {
+      "id": "w1",
+      "word": "वागड़ी",
+      "transliteration": "Vāgaṛī",
+      "pos": "संज्ञा",
+      "meanings": {
+        "hindi": "वागड़ क्षेत्र की भाषा",
+        "english": "Language of Vagad region"
+      },
+      "example": {
+        "wagdi": "वागड़ी भाषा वागड़ में बोली जावे है।",
+        "hindi": "वागड़ी भाषा वागड़ क्षेत्र में बोली जाती है।"
+      },
+      "tags": ["भाषा", "क्षेत्र"]
+    },
+    {
+      "id": "w2",
+      "word": "चौपाल",
+      "transliteration": "Caupāl",
+      "pos": "संज्ञा",
+      "meanings": {
+        "hindi": "गाँव की सभा या बैठक",
+        "english": "Village gathering place"
+      },
+      "example": {
+        "wagdi": "चौपाल पे सब मिल्या।",
+        "hindi": "चौपाल पर सब मिले।"
+      },
+      "tags": ["संस्कृति", "स्थान"]
+    },
+    {
+      "id": "w3",
+      "word": "पोथी",
+      "transliteration": "Pothī",
+      "pos": "संज्ञा",
+      "meanings": {
+        "hindi": "पुस्तिका या पांडुलिपि",
+        "english": "Manuscript or booklet"
+      },
+      "example": {
+        "wagdi": "पुरानी पोथी में ज्ञान है।",
+        "hindi": "पुरानी पुस्तिका में ज्ञान है।"
+      },
+      "tags": ["साहित्य", "वस्तु"]
+    },
+    {
+      "id": "w4",
+      "word": "हालो",
+      "transliteration": "Hālo",
+      "pos": "क्रिया",
+      "meanings": {
+        "hindi": "आओ / चलो",
+        "english": "Come / Let's go"
+      },
+      "example": {
+        "wagdi": "हालो, घर चलो।",
+        "hindi": "आओ, घर चलो।"
+      },
+      "tags": ["क्रिया", "आम"]
+    },
+    {
+      "id": "w5",
+      "word": "माटी",
+      "transliteration": "Māṭī",
+      "pos": "संज्ञा",
+      "meanings": {
+        "hindi": "मिट्टी / मिट्टी का देश",
+        "english": "Soil / Earth"
+      },
+      "example": {
+        "wagdi": "माटी की खुशबू।",
+        "hindi": "मिट्टी की खुशबू।"
+      },
+      "tags": ["प्रकृति", "संस्कृति"]
+    },
+    {
+      "id": "w6",
+      "word": "धोती",
+      "transliteration": "Dhotī",
+      "pos": "संज्ञा",
+      "meanings": {
+        "hindi": "पारंपरिक वस्त्र",
+        "english": "Traditional garment"
+      },
+      "example": {
+        "wagdi": "धोती पहन के आया।",
+        "hindi": "धोती पहन कर आया।"
+      },
+      "tags": ["वस्त्र", "परंपरा"]
+    },
+    {
+      "id": "w7",
+      "word": "भाट",
+      "transliteration": "Bhāṭ",
+      "pos": "संज्ञा",
+      "meanings": {
+        "hindi": "गायक / इतिहासकार",
+        "english": "Bard / Historian"
+      },
+      "example": {
+        "wagdi": "भाट गीत गावे है।",
+        "hindi": "भाट गीत गाता है।"
+      },
+      "tags": ["संस्कृति", "कला"]
+    },
+    {
+      "id": "w8",
+      "word": "बनास",
+      "transliteration": "Banās",
+      "pos": "संज्ञा",
+      "meanings": {
+        "hindi": "नदी का नाम",
+        "english": "Name of a river"
+      },
+      "example": {
+        "wagdi": "बनास नदी वागड़ में बहे है।",
+        "hindi": "बनास नदी वागड़ में बहती है।"
+      },
+      "tags": ["भूगोल", "नदी"]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g1",
+      "category": "सर्वनाम",
+      "description": "वागड़ी में सर्वनामों का प्रयोग व्यक्ति और संख्या के अनुसार बदलता है।",
+      "rules": [
+        {
+          "wagdi": "मैं",
+          "hindi": "मैं",
+          "english": "I",
+          "note": "प्रथम पुरुष"
+        },
+        {
+          "wagdi": "तू",
+          "hindi": "तू",
+          "english": "You",
+          "note": "द्वितीय पुरुष"
+        },
+        {
+          "wagdi": "आम्हा",
+          "hindi": "हम",
+          "english": "We",
+          "note": "बहुवचन"
+        }
+      ],
+      "notes": "वागड़ी में 'आम्हा' शब्द का प्रयोग 'हम' के लिए अधिक होता है।"
+    },
+    {
+      "id": "g2",
+      "category": "काल",
+      "description": "वागड़ी क्रियाओं के काल (भूत, वर्तमान, भविष्य) के रूप।",
+      "rules": [
+        {
+          "wagdi": "जावे है",
+          "hindi": "जाता है",
+          "english": "Goes",
+          "note": "वर्तमान काल"
+        },
+        {
+          "wagdi": "गयो",
+          "hindi": "गया",
+          "english": "Went",
+          "note": "भूत काल"
+        },
+        {
+          "wagdi": "जासी",
+          "hindi": "जाएगा",
+          "english": "Will go",
+          "note": "भविष्य काल"
+        }
+      ],
+      "notes": "वागड़ी में क्रिया के अंत में 'सी' या 'वे' जोड़कर काल का बोध होता है।"
+    }
+  ]
+}
